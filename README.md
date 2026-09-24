@@ -1,11 +1,6 @@
 # Diseño de Bases de Datos SQL/NoSQL alta escalabilidad: DynamoDB, Cassandra y AWS Well-Architected
 
-<span style="background-color: #0366d6; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">DynamoDB</span>
-<details>
-  <summary><b>DynamoDB</b></summary>
-</details>
-
-Este repositorio documenta tres análisis de arquitectura de bases de datos (SQL vs. NoSQL) aplicados a casos hipotéticos inspirados en empresas reales, con foco en escalabilidad, disponibilidad y costos en AWS.
+Este repositorio documenta tres análisis de arquitectura de bases de datos SQL y NoSQL aplicados a casos inspirados y basados en empresas reales, con foco en escalabilidad, disponibilidad y costos en AWS.
 
 ## Índice
 - [Análisis 1: Tecnologías de Base de Datos (Fracttal)](#análisis-1-tecnologías-de-base-de-datos-fracttal)
