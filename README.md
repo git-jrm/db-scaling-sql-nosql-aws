@@ -58,7 +58,16 @@ Para este análisis se incluyen los siguientes elementos:
 - Recomendaciones.
 - Justificación.
 
-> **[Insertar tabla comparativa de tecnologías de bases de datos]**
+| Criterio | SQL (Relacional) | NoSQL (No relacional) |
+|---|---|---|
+| Modelo de datos | Tablas con esquema fijo | Documentos, clave-valor, columnas o grafos |
+| Escalabilidad | Vertical (más recursos por servidor) | Horizontal (más nodos) |
+| Consistencia | Fuerte (ACID) | Eventual (BASE), configurable según motor |
+| Rendimiento en escrituras masivas | Limitado por hardware del nodo | Alto, distribuido entre nodos |
+| Esquema | Rígido, requiere migraciones | Flexible, sin esquema fijo |
+| Costos | Infraestructura propia (CapEx) | Modelo gestionado, pago por uso (OpEx) |
+| Casos de uso típicos | Transacciones financieras, datos relacionales críticos | Alto volumen, IoT, sesiones, catálogos |
+| Ejemplos | MySQL, PostgreSQL, SQL Server | DynamoDB, MongoDB, Cassandra |
 
 ### Evaluar aspectos clave
 
