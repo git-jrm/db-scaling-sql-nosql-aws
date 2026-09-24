@@ -1,6 +1,4 @@
-# M4: Bases de datos para ingenieros de datos
-
-> `Navegación:` [Módulo 2](https://github.com/git-jrm/ing-datos-M2), [Módulo 3](https://github.com/git-jrm/ing-datos-M3), [Módulo 4](https://github.com/git-jrm/ing-datos-M4), [Módulo 5](https://github.com/git-jrm/ing-datos-M5)
+# Bases de datos para ingenieros de datos
 
 En este espacio exploraremos los principales aspectos aprendidos planteandolo de una manera **atractiva** mediante escenarios actuales de empresas y planteando un caso hipotetico con un fin edicativo.
 
