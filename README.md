@@ -1,4 +1,9 @@
-# Diseño de Bases de Datos SQL/NoSQL para Alta Escala: DynamoDB, Cassandra y AWS Well-Architected
+# Diseño de Bases de Datos SQL/NoSQL alta escalabilidad: DynamoDB, Cassandra y AWS Well-Architected
+
+<span style="background-color: #0366d6; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">DynamoDB</span>
+<details>
+  <summary><b>DynamoDB</b></summary>
+</details>
 
 Este repositorio documenta tres análisis de arquitectura de bases de datos (SQL vs. NoSQL) aplicados a casos hipotéticos inspirados en empresas reales, con foco en escalabilidad, disponibilidad y costos en AWS.
 
