@@ -1,6 +1,6 @@
-# Diseño de Bases de Datos SQL/NoSQL alta escalabilidad
+# Diseño de Bases de Datos para alta escalabilidad
 
-Este repositorio documenta tres análisis de arquitectura de bases de datos SQL vs NoSQL aplicados a casos inspirados y basados en empresas reales, con foco en escalabilidad, disponibilidad y costos en AWS. Trabajando con Amazon DynamoDB, Cassandra y AWS Well-Architected Framework.
+Este repositorio documenta tres análisis de arquitectura de bases de datos SQL vs NoSQL aplicados a casos inspirados en empresas reales, con foco en escalabilidad y disponibilidad. Trabajando con Amazon DynamoDB, Cassandra y AWS Well-Architected Framework.
 
 ## Índice
 - [Análisis 1: Tecnologías de Base de Datos (Fracttal)](#análisis-1-tecnologías-de-base-de-datos-fracttal)
@@ -33,15 +33,15 @@ Este repositorio documenta tres análisis de arquitectura de bases de datos SQL 
 
 ---
 
-# Análisis 1: Tecnologías de Base de Datos (Fracttal)
+# 📱 Fracttal - Tecnologías de Base de Datos (Análisis 1)
 
-## Introducción (Fracttal)
+## Introducción
 
 La empresa tecnológica chilena Fracttal (gestión del mantenimiento), gracias a su enfoque Mobile First, ha tenido un gran éxito y auge en su rápida expansión internacional. Debido a esto, en los últimos meses se ha vuelto más frecuente la ralentización del sistema y se prevé que la cantidad de usuarios aumente de forma acelerada.
 
 Como arquitecto/a de bases de datos, el objetivo es evaluar y analizar las diferentes tecnologías de bases de datos disponibles y presentar una propuesta que se adapte a los requerimientos específicos del negocio.
 
-## Análisis situación actual (Fracttal)
+## Análisis situación actual
 
 La situación actual en Fracttal es que la App utiliza una base de datos relacional MySQL con motor de almacenamiento InnoDB para optimización de inserción y actualización de datos.
 
@@ -49,7 +49,7 @@ La instancia de base de datos fue escalada verticalmente cada vez que el sistema
 
 La App actualmente tiene +40K clientes que generan entre todos sus dispositivos +100K registros/hora y +10M registros/mes. Se prevé que la App triplique sus clientes en un año.
 
-## Comparación de tecnologías (Fracttal)
+## Comparación de tecnologías
 
 Para este análisis se incluyen los siguientes elementos:
 
@@ -81,13 +81,13 @@ Es fundamental considerar:
 - **Costos operativos:** se busca reducir al máximo el gasto de infraestructura propia y la carga operativa.
 - **Flexibilidad tecnológica:** evaluar si conviene un único motor de base de datos o un enfoque híbrido que combine lo mejor de SQL y NoSQL.
 
-## Propuesta de solución (Fracttal)
+## Propuesta de solución
 
 Se propone un enfoque conservador: una arquitectura híbrida que mantenga lo que ya está funcionando y combine las fortalezas de las bases de datos relacionales y no relacionales.
 
 Mantener la BD relacional (SQL) actual, MySQL, como la principal, e implementar una BD no relacional (NoSQL) para migrar el almacenamiento de registros operativos, permitiendo alta escalabilidad horizontal de forma nativa.
 
-## Recomendación (Fracttal)
+## Recomendación
 
 Para la BD no relacional (NoSQL) se recomienda **DynamoDB** por estas ventajas:
 
@@ -96,13 +96,13 @@ Para la BD no relacional (NoSQL) se recomienda **DynamoDB** por estas ventajas:
 - **Reduce OpEx:** reduce drásticamente la carga operativa y el mantenimiento requerido.
 - **Elimina CapEx:** no requiere inversión inicial en infraestructura.
 
-## Estrategia de migración (Fracttal)
+## Estrategia de migración
 
 - **Fase 1:** integrar la nueva base NoSQL para operaciones de escritura intensiva.
 - **Fase 2:** migrar datos históricos y ajustar servicios dependientes.
 - **Fase 3:** optimizar y ajustar índices, escalado y monitoreo.
 
-## Beneficios esperados (Fracttal)
+## Beneficios esperados
 
 - Reducción de la latencia y eliminación de cuellos de botella.
 - Escalabilidad prácticamente ilimitada.
@@ -110,7 +110,7 @@ Para la BD no relacional (NoSQL) se recomienda **DynamoDB** por estas ventajas:
 - Infraestructura lista para el crecimiento proyectado y nuevos casos de uso.
 - Habilita análisis con herramientas de AWS como Amazon QuickSight (dashboards ejecutivos) y Amazon Redshift (data warehousing de registros históricos).
 
-## Conclusión (Fracttal)
+## Conclusión Análisis
 
 El caso muestra que el éxito inicial de un producto puede convertirse en un desafío técnico si no se planifica para el crecimiento, y que los paradigmas modernos de bases de datos ofrecen respuestas efectivas a estos retos.
 
@@ -120,15 +120,15 @@ DynamoDB destaca por su escalabilidad, su modelo de cobro por uso y su integraci
 
 ---
 
-# Análisis 2: Bases de Datos No Relacionales (MOBI)
+# 🎧 MOBI - Bases de Datos No Relacionales (Análisis 2)
 
-## Introducción (MOBI)
+## Introducción
 
 Tras recibir venture capital por USD $100 millones en mayo de 2025, la empresa MOBI ha crecido de forma exponencial: 12M de usuarios en 2024, 20M en 2025, y se prevé que triplique su base de usuarios en menos de un año.
 
 Como arquitecto/a de bases de datos, el objetivo es analizar la situación de la empresa y las diferentes tecnologías NoSQL disponibles para presentar una propuesta acorde a las necesidades del negocio.
 
-## Análisis situación actual (MOBI)
+## Análisis situación actual
 
 Actualmente la plataforma de streaming de MOBI utiliza una base de datos relacional SQL Server. Todos los usuarios generan 1GB de datos por día en métricas de uso; el tamaño de la BD es de 1,5PB y se estima que en un año podría acercarse a los 5PB. Esto no supone una limitante técnica en SQL Server, que soporta más de 500PB en almacenamiento.
 
@@ -136,7 +136,7 @@ El problema es de concurrencia: SQL Server tiene un límite de cerca de 32 mil c
 
 Por lo anterior, se precisa elegir la solución que mejor cumpla con los criterios de alta disponibilidad y concurrencia.
 
-## Comparación de tecnologías (MOBI)
+## Comparación de tecnologías
 
 Para este análisis se incluyen: comparación entre bases de datos relacionales (SQL) y no relacionales (NoSQL), puntos débiles de la solución actual, recomendaciones y justificación.
 
@@ -154,13 +154,13 @@ Es fundamental considerar:
 - **Flexibilidad:** evaluar si conviene un único motor de base de datos o un enfoque híbrido.
 - **Comunidad:** Mongo y DynamoDB cuentan con comunidades grandes, Cassandra mediana y Neo4j pequeña.
 
-## Propuesta de solución (MOBI)
+## Propuesta de solución
 
 Se recomienda una arquitectura híbrida que preserve la infraestructura actual funcionando correctamente y aproveche las capacidades específicas de bases de datos NoSQL para resolver el problema de concurrencia.
 
 Conservar la BD relacional SQL Server para datos estructurados críticos, e integrar una BD no relacional (NoSQL) especializada para manejar las conexiones concurrentes masivas y datos de streaming.
 
-## Recomendación (MOBI)
+## Recomendación
 
 Para la BD no relacional (NoSQL) se propone **Cassandra** por estas características clave:
 
@@ -169,20 +169,20 @@ Para la BD no relacional (NoSQL) se propone **Cassandra** por estas característ
 - **Escrituras siempre disponibles:** ideal para logs de streaming y datos de sesión en tiempo real.
 - **Tolerancia a particiones:** mantiene operación normal aunque se pierda conectividad entre regiones.
 
-## Estrategia de migración (MOBI)
+## Estrategia de migración
 
 - **Fase 1:** desplegar cluster Cassandra para datos de sesiones y streaming activo.
 - **Fase 2:** migrar logs operativos y métricas de uso en tiempo real.
 - **Fase 3:** configurar replicación multi-datacenter y ajustar consistency levels.
 
-## Beneficios esperados (MOBI)
+## Beneficios esperados
 
 - Eliminación completa del cuello de botella de 32K conexiones.
 - Disponibilidad 24/7 sin interrupciones por mantenimiento o fallos.
 - Escalabilidad lineal preparada para crecimiento exponencial de usuarios.
 - Latencia consistente independiente del volumen de tráfico concurrente.
 
-## Conclusión (MOBI)
+## Conclusión Análisis
 
 El caso resalta la importancia de evaluar tecnologías NoSQL no solo por su capacidad de almacenamiento, sino por su arquitectura para resolver problemas específicos de concurrencia y disponibilidad.
 
@@ -192,15 +192,15 @@ Cassandra destaca por su capacidad de manejar conexiones concurrentes masivas, s
 
 ---
 
-# Análisis 3: DynamoDB (PCFactory)
+# 🛒 PCFactory - DynamoDB (Análisis 3)
 
-## Introducción (PCFactory)
+## Introducción
 
 Debido al alto crecimiento de la industria del e-commerce en Chile, PCFactory se encuentra en expansión acelerada en los últimos años.
 
 Como arquitecto/a de bases de datos en la nube, el objetivo es analizar la situación y proponer una solución basada en DynamoDB, alineada con las buenas prácticas del Well-Architected Framework de AWS.
 
-## Análisis situación actual (PCFactory)
+## Análisis situación actual
 
 En los últimos meses se han presentado problemas en determinados momentos del día: cuando coinciden muchos pedidos simultáneos, el sistema genera latencias que afectan la experiencia del usuario, aumentando la probabilidad de abandono del carro de compra.
 
@@ -208,7 +208,7 @@ Hasta ahora ha ocurrido puntualmente en fechas clave, pero por el crecimiento de
 
 Para resolver el problema de latencias en horarios peak, se propone un diseño optimizado en Amazon DynamoDB basado en un modelo de clave-partición que permita escalar horizontalmente de forma automática.
 
-## Diseño de base de datos en DynamoDB (PCFactory)
+## Diseño de base de datos en DynamoDB
 
 El diseño utiliza una clave compuesta que combina `ClienteID` como clave de partición y `PedidoID` como clave de ordenamiento, asegurando una distribución eficiente y escalabilidad automática al particionar los registros por cliente.
 
@@ -359,7 +359,7 @@ Salida:
 
 Este diseño permite manejar grandes volúmenes de pedidos distribuyendo uniformemente la carga de lectura y escritura gracias a la clave compuesta. Los LSI facilitan ordenar pedidos por fecha dentro de la misma tienda, mientras que los GSI habilitan consultas por cliente y por estado sin afectar el rendimiento de la tabla principal.
 
-## Ventajas y desventajas de migración a DynamoDB (PCFactory)
+## Ventajas y desventajas de migración a DynamoDB
 
 **Ventajas:**
 - **Escalabilidad automática:** crece sin reconfiguración manual.
@@ -371,7 +371,7 @@ Este diseño permite manejar grandes volúmenes de pedidos distribuyendo uniform
 - **Límites por ítem:** 400 KB máximo por registro.
 - **Límite de CapacityUnits:** 40.000 para lectura y escritura (ampliable bajo solicitud).
 
-## Estrategia de optimización y escalabilidad (PCFactory)
+## Estrategia de optimización y escalabilidad
 
 **¿Cuál estrategia de autoescalado de capacidad en DynamoDB es mejor?**
 
@@ -386,7 +386,7 @@ Se recomienda **Auto Scaling on-demand (On-Demand Capacity Mode)**, ya que ajust
 - **Amazon CloudWatch:** monitoreo, alarmas y métricas.
 - **AWS Step Functions:** orquestación de flujos de trabajo complejos.
 
-## Conclusión (PCFactory)
+## Conclusión Análisis 
 
 DynamoDB ofrece a PCFactory una plataforma de base de datos altamente escalable y de baja latencia, capaz de absorber peaks de carga sin degradar la experiencia del cliente. Su modelo serverless reduce la complejidad operativa y facilita la evolución futura del sistema sin interrumpir el servicio.
 
