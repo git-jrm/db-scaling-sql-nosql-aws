@@ -3,7 +3,7 @@
 Este repositorio documenta tres análisis de arquitectura de bases de datos SQL vs NoSQL aplicados a casos inspirados en empresas reales, con foco en escalabilidad y disponibilidad. Trabajando con Amazon DynamoDB, Cassandra y AWS Well-Architected Framework.
 
 ## Índice
-- [📱 Fracttal - Tecnologías de Base de Datos](#-fracttal---tecnologías-de-base-de-datos-análisis-1)
+- [I. 📱 Fracttal: Cuando el éxito satura MySQL](#i--fracttal-cuando-el-éxito-satura-mysql)
   - [Introducción](#introducción)
   - [Análisis situación actual](#análisis-situación-actual)
   - [Comparación de tecnologías](#comparación-de-tecnologías)
@@ -12,7 +12,7 @@ Este repositorio documenta tres análisis de arquitectura de bases de datos SQL 
   - [Estrategia de migración](#estrategia-de-migración)
   - [Beneficios esperados](#beneficios-esperados)
   - [Conclusión](#conclusión-análisis)
-- [🎧 MOBI - Bases de Datos No Relacionales](#-mobi---bases-de-datos-no-relacionales-análisis-2)
+- [II. 🎧 MOBI: Streaming a escala, de SQL Server a Cassandra](#ii--mobi-streaming-a-escala-de-sql-server-a-cassandra)
   - [Introducción](#introducción-1)
   - [Análisis situación actual](#análisis-situación-actual-1)
   - [Comparación de tecnologías](#comparación-de-tecnologías-1)
@@ -21,7 +21,7 @@ Este repositorio documenta tres análisis de arquitectura de bases de datos SQL 
   - [Estrategia de migración](#estrategia-de-migración-1)
   - [Beneficios esperados](#beneficios-esperados-1)
   - [Conclusión](#conclusión-análisis-1)
-- [🛒 PCFactory - DynamoDB](#-pcfactory---dynamodb-análisis-3)
+- [III. 🛒 PCFactory: Diseñando Claves de Partición para E-commerce](#iii--pcfactory-diseñando-claves-de-partición-para-e-commerce)
   - [Introducción](#introducción-2)
   - [Análisis situación actual](#análisis-situación-actual-2)
   - [Diseño de base de datos en DynamoDB](#diseño-de-base-de-datos-en-dynamodb)
@@ -33,7 +33,7 @@ Este repositorio documenta tres análisis de arquitectura de bases de datos SQL 
 
 ---
 
-# 📱 Fracttal - Tecnologías de Base de Datos (Análisis 1)
+# I. 📱 Fracttal: Cuando el éxito satura MySQL
 
 ## Introducción
 
@@ -120,7 +120,7 @@ DynamoDB destaca por su escalabilidad, su modelo de cobro por uso y su integraci
 
 ---
 
-# 🎧 MOBI - Bases de Datos No Relacionales (Análisis 2)
+# II. 🎧 MOBI: Streaming a escala, de SQL Server a Cassandra
 
 ## Introducción
 
@@ -192,7 +192,8 @@ Cassandra destaca por su capacidad de manejar conexiones concurrentes masivas, s
 
 ---
 
-# 🛒 PCFactory - DynamoDB (Análisis 3)
+# III. 🛒 PCFactory: Diseñando Claves de Partición para E-commerce
+
 
 ## Introducción
 
